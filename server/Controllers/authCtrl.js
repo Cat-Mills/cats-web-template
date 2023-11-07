@@ -14,15 +14,13 @@ export default {
           req.session.user = {
             userId: currentUser.userId,
             username: currentUser.username,
-            adminStatus: currentUser.adminStatus,
-            bandStatus: currentUser.bandStatus,
+            adminStatus: currentUser.adminStatus
           };
           // console.log(req.session.user);
           res.send({
             userId: currentUser.userId,
             username: currentUser.username,
             adminStatus: currentUser.adminStatus,
-            bandStatus: currentUser.bandStatus,
           });
         } else res.status(401).send("Incorrect Password");
       } else res.status(401).send("There is no user with that username");

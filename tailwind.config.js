@@ -24,19 +24,10 @@ export default {
       "2xl": "8px 8px 24px var(--tw-shadow-color)",
     },
     extend: {
-      backgroundImage: {
-        logo: "url('/public/backwallrecords-logo.jpeg')",
-      },
-      colors: {
-        burntOrange: "#BC5F04",
-        lightOrange: "#F0A868",
-        mint: "#9EBC9F",
-        darkMint: "#649066",
-      },
+      backgroundImage: {},
+      colors: {},
     },
-    fontFamily: {
-      roboto: ["Roboto", "sans-serif"],
-    },
+    fontFamily: {},
     animation: {
       marquee: "marquee 300s linear infinite 2s",
       marquee2: "marquee2 300s linear infinite 2s",

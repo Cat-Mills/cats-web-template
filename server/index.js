@@ -9,25 +9,10 @@ import { ListBucketsCommand, S3Client } from "@aws-sdk/client-s3";
 import path from "path";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { Photo } from "./model.js";
 
 import authCtrl from "./Controllers/authCtrl.js";
 const { login, register, updateUser, logout, getUser } = authCtrl;
 
-import bandCtrl from "./Controllers/bandCrtl.js";
-const { getBand, getAllBands } = bandCtrl;
-
-import heroCtrl from "./Controllers/heroCtrl.js";
-const { getHeros, addHero, editHero, deleteHero } = heroCtrl;
-
-import newsCtrl from "./Controllers/newsCtrl.js";
-const { getAllArticles, addArticle, updateArticle, removeArticle } = newsCtrl;
-
-import photoCtrl from "./Controllers/photosCtrl.js";
-const { getBandPhotos, addBandPhoto, deleteBandPhoto } = photoCtrl;
-
-// import S3ctrl from "./Controllers/S3Ctrl.js";
-// const { getImage, getList } = S3ctrl;
 import adminCtrl from "./Controllers/adminCtrl.js";
 const { getAllUsers } = adminCtrl;
 
@@ -47,7 +32,7 @@ export const client = new S3Client({
 
 // Set up app instance
 const app = express();
-const PORT = 4545;
+const PORT = 3000;
 
 const stripe = new Stripe(
   "sk_test_51IRnJgK0mJ6IuZSRS1BZnXo3qpugm5CjPSZ6TULycYHtkBElg38SOGsPNrLf9Lg7o3S2ucxtANTVl0JGcftJxPM300GAjhhSIq"
@@ -76,10 +61,6 @@ app.put("/updateUser", updateUser);
 app.delete("/logout", logout);
 app.get("/getUser", getUser);
 
-// band endpoints
-app.get("/getBand", getBand);
-app.get("/getAllBands", getAllBands);
-
 // Admin endpoints
 app.get("/getAllUsers", getAllUsers);
 
@@ -106,27 +87,6 @@ app.post("/checkout", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-});
-
-//hero endpoints
-app.get("/getHeros", getHeros);
-app.post("/addHero", addHero);
-app.put("/editHero/:heroId", editHero);
-app.delete("/deleteHero/:heroId", deleteHero);
-
-// news endpoints
-app.get("/getArticles", getAllArticles);
-app.post("/newArticle", addArticle);
-app.put("/editArticle/:id", updateArticle);
-app.delete("/article/:id", removeArticle);
-
-// bandPhotos endpoints
-app.get("/getBandPhotos", getBandPhotos);
-app.post("/addBandPhoto", addBandPhoto);
-app.delete("/deleteBandPhoto/:url", deleteBandPhoto);
-
-app.get("/calendarhtml", (req, res) => {
-  res.sendFile(path.join(__dirname, "../src/calendar.html"));
 });
 
 // Open up door to server
