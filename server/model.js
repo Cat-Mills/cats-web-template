@@ -42,7 +42,6 @@ class Product extends Model {
     return this.toJSON();
   }
 }
-
 Product.init(
   {
     productId: {
@@ -107,6 +106,61 @@ Hero.init(
     sequelize: db
   }
 )
+
+class Blob extends Model {
+  [util.inspect.custom]() {
+    return this.toJSON();
+  }
+}
+Blob.init(
+  {
+    blobId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    blobUrl: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    blobCTA: {
+      type: DataTypes.STRING,
+    },
+    blobLink: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    modelName: "blob",
+    sequelize: db
+  }
+)
+
+class Like extends Model {
+  [util.inspect.custom]() {
+    return this.toJSON();
+  }
+}
+Like.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+    },
+    ProductId: {
+      type: DataTypes.INTEGER,
+    },
+  },
+  {
+    modelName: "like",
+    sequelize: db,
+  }
+);
+
 
 
 if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
