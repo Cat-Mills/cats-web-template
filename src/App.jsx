@@ -2,6 +2,8 @@ import { Routes, Route, } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import { useState, useEffect } from "react";
 import "./index.css";
+import Header from "./components/Header.jsx";
+import Footer from "./components/footer.jsx";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(localStorage.theme === 'dark' ? true : false);
@@ -29,9 +31,11 @@ export default function App() {
   }, []);
   return (
     <div className="dark:text-white dark:bg-zinc-700">
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer/>
     </div>
   );
 }

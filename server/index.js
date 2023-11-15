@@ -35,7 +35,7 @@ const app = express();
 const PORT = 3000;
 
 const stripe = new Stripe(
-  "sk_test_51IRnJgK0mJ6IuZSRS1BZnXo3qpugm5CjPSZ6TULycYHtkBElg38SOGsPNrLf9Lg7o3S2ucxtANTVl0JGcftJxPM300GAjhhSIq"
+  'sk_test_51OCUAVDgkjCJ2ux231h8dmXmOW9Usvw3v6BEhDUjgnwonfoDBt7bXmByOdMEGpo5CVejGxa7gTHrVAbeR8ghQQra00DfTf6ay2'
 );
 
 // Set up middleware

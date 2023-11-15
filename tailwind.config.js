@@ -55,6 +55,7 @@ export default {
     },
   },
   plugins: [
+    require('@headlessui/tailwindcss'),
     require("tailwindcss-animated"),
     require('autoprefixer'),
     plugin(function ({ matchUtilities, theme }) {

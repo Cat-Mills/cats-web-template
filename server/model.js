@@ -37,43 +37,6 @@ User.init(
   }
 );
 
-class Product extends Model {
-  [util.inspect.custom]() {
-    return this.toJSON();
-  }
-}
-Product.init(
-  {
-    productId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    productName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
-    },
-    productType: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    productPrice: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    productDesc: {
-      type: DataTypes.STRING
-    },
-    productNotes: {
-      type: DataTypes.STRING
-    }
-  },
-  {
-    modelName:"product",
-    sequelize: db
-  }
-)
 
 class Hero extends Model {
   [util.inspect.custom]() {
