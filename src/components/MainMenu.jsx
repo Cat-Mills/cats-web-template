@@ -6,31 +6,31 @@ const menuItems = [
     {
         name: 'Shop',
         description: 'Check out our products',
-        href: '##',
+        href: '/Shop',
         icon: ShopCart,
     },
     {
         name: 'Silver Subs',
         description: "Subscribe and Get goodies every month!",
-        href: "##",
+        href: "/SilverSubs",
         icon: Gift,
     },
     {
         name: 'Calendar',
         description: 'See when we are selling near you',
-        href: '##',
+        href: '/Calendar',
         icon: Calendar,
     },
     {
         name: 'About Us',
         description: 'Learn our origin story',
-        href: "##",
+        href: "/AboutUs",
         icon: Info,
     },
     {
         name: 'Profile',
         description: 'Sign in or create an account',
-        href: '##',
+        href: '/Profile',
         icon: User,
     },
 ]

@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import "./index.css";
 import Header from "./components/Header.jsx";
 import Footer from "./components/footer.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import Calendar from "./pages/Calendar.jsx";
+import Shop from "./pages/Shop.jsx";
+import SilverSubs from "./pages/SilverSubs.jsx";
+import Profile from "./pages/Profile.jsx";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(localStorage.theme === 'dark' ? true : false);
@@ -34,6 +39,11 @@ export default function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/Calendar" element={<Calendar/>} />
+        <Route path="/Shop" element={<Shop />} />
+        <Route path="/SilverSubs" element={<SilverSubs/>} />
+        <Route path="/Profile" element={<Profile/>} />
       </Routes>
       <Footer/>
     </div>
