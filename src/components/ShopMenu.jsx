@@ -25,9 +25,9 @@ export default function ShopMenu() {
                 {links.map((link) => (
                     <Menu.Item
                         as="a"
-                        key={link.href}
+                        key={link.label}
                         href={link.href}
-                        className="py-1 hover:text-white"
+                        className="py-1.5 hover:text-white"
                     >
                         {link.label}
                     </Menu.Item>

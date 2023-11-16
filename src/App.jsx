@@ -9,6 +9,9 @@ import Calendar from "./pages/Calendar.jsx";
 import Shop from "./pages/Shop.jsx";
 import SilverSubs from "./pages/SilverSubs.jsx";
 import Profile from "./pages/Profile.jsx";
+import Cart from "./pages/Cart.jsx";
+import { SuccessPage } from "./pages/SuccessPage.jsx";
+import { CancelOrder } from "./pages/CancelOrder.jsx";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(localStorage.theme === 'dark' ? true : false);
@@ -44,6 +47,9 @@ export default function App() {
         <Route path="/Shop" element={<Shop />} />
         <Route path="/SilverSubs" element={<SilverSubs/>} />
         <Route path="/Profile" element={<Profile/>} />
+        <Route path="/Cart" element={<Cart/>} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/cancel" element={<CancelOrder />} />
       </Routes>
       <Footer/>
     </div>

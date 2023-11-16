@@ -1,17 +1,18 @@
-import { Popover, Transition } from '@headlessui/react'
-import { ChevDown,Calendar,ShopCart,User, MenuButton, Info, Gift } from '../../icons'
+import { Popover, Transition, Menu } from '@headlessui/react'
+import { ChevDown, Calendar, ShopCart, User, MenuButton, Info, Gift } from '../../icons'
 import { Fragment } from 'react'
+import ShopMenu from './ShopMenu'
 
 const menuItems = [
     {
         name: 'Shop',
         description: 'Check out our products',
-        href: '/Shop',
+        href: null,
         icon: ShopCart,
     },
     {
         name: 'Silver Subs',
-        description: "Subscribe and Get goodies every month!",
+        description: "Subscribe to get a candle every month!",
         href: "/SilverSubs",
         icon: Gift,
     },
@@ -34,6 +35,13 @@ const menuItems = [
         icon: User,
     },
 ]
+const links = [
+    { href: '/Shop', label: 'Shop All' },
+    { href: '/Shop', label: 'Candles' },
+    { href: '/Shop', label: 'Lip Balm' },
+    { href: '/Shop', label: 'Swag' },
+    { href: '/Shop', label: 'Gift Cards' },
+]
 
 export default function MainMenu() {
     return (
@@ -46,13 +54,8 @@ export default function MainMenu() {
                 ${open ? 'text-white' : 'text-white/90'}
                 group inline-flex items-center text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
                         >
-                            <span><MenuButton/></span>
-                            {/* <div
-                            className={`${open ? 'text-slate-300' : 'text-slate-300/70'}
-                            ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-slate-300/80`}
-                            aria-hidden="true">
-                            <ChevDown/>
-                            </div> */}
+                            <span><MenuButton /></span>
+
                         </Popover.Button>
                         <Transition
                             as={Fragment}
@@ -76,10 +79,37 @@ export default function MainMenu() {
                                                     <item.icon aria-hidden="true" />
                                                 </div>
                                                 <div className="ml-4">
-                                                    <p className="text-sm font-medium text-slate-300">
-                                                        {item.name}
-                                                    </p>
-                                                    <p className="text-sm text-slate-500">
+                                                    <div className="text-sm font-medium text-slate-300 flex cursor-pointer w-full">
+                                                        {item.name === "Shop" ? null : item.name}
+                                                        {(item.name === "Shop") &&
+                                                            <Menu as='div' className="relative">
+                                                                <Menu.Button className="flex w-60 text-center items-center gap-2"> Shop <div className=' text-lg'>+</div>
+                                                                    
+                                                                </Menu.Button>
+                                                                <Transition
+                                                                    enter="transition duration-100 ease-out"
+                                                                    enterFrom="transform scale-95 opacity-0"
+                                                                    enterTo="transform scale-100 opacity-100"
+                                                                    leave="transition duration-75 ease-out"
+                                                                    leaveFrom="transform scale-100 opacity-100"
+                                                                    leaveTo="transform scale-95 opacity-0"
+                                                                >
+                                                                    <Menu.Items className=" flex flex-col w-40 py-2 px-2 bg-inherit text-start text-slate-300">
+                                                                        {links.map((link) => (
+                                                                            <Menu.Item
+                                                                                as="div"
+                                                                                key={link.label}
+                                                                                href={link.href}
+                                                                                className="py-1.5 hover:text-white"
+                                                                            >
+                                                                                {link.label}
+                                                                            </Menu.Item>
+                                                                        ))}
+                                                                    </Menu.Items>
+                                                                </Transition>
+                                                            </Menu>}
+                                                    </div>
+                                                    <p className="text-sm text-slate-500 cursor-default">
                                                         {item.description}
                                                     </p>
                                                 </div>
@@ -92,9 +122,9 @@ export default function MainMenu() {
                                             className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-slate-600 focus:outline-none focus-visible:ring focus-visible:ring-slate-500/50"
                                         >
                                             <span className="flex items-center text-slate-400">
-                                                External Links Go Here
+                                                Social Media Links Go Here
                                             </span>
-                                            
+
                                         </a>
                                     </div>
                                 </div>
