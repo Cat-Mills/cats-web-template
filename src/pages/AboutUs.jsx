@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function AboutUs() {
   return (
-    <div className="w-full h-screen flex flex-col pt-[8%] bg-slate-300">AboutUs</div>
+    <div className="pt-[12vh] w-full h-screen flex flex-col  bg-slate-300">AboutUs</div>
   )
 }

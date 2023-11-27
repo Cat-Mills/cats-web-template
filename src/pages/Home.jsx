@@ -7,7 +7,7 @@ import Footer from "../components/footer.jsx";
 export default function Home() {
 
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="pt-[12vh] w-full h-screen flex flex-col">
       <Hero/>
       <DiscLinks/>
     </div>

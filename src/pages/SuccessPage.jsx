@@ -10,7 +10,7 @@ export const SuccessPage = () => {
 
     return (
         <>
-            <div className="bg-gray-100 h-screen flex flex-col justify-center items-center">
+            <div className="pt-[12vh] bg-gray-100 h-screen flex flex-col justify-center items-center">
                 <div className="text-center">
                     <h2 className="text-4xl md:text-6xl font-semibold text-green-600 mb-4">
                         Thanks for your order!

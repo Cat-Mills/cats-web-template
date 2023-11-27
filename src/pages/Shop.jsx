@@ -38,7 +38,7 @@ export default function Shop() {
             );
             
     return (
-        <div className="w-full h-screen flex flex-col overflow-y-scroll pt-[8%]">
+        <div className="pt-[12vh] w-full h-screen flex flex-col overflow-y-scroll ">
             <div className="w-full">
                 <h1 className="text-3xl m-6 text-center font-bold text-shadow">Shop</h1>
             </div>
@@ -63,7 +63,7 @@ export default function Shop() {
                 {selectedCategory !== "--filter by category--" ? (
                     <>
                         {filteredProducts.map((product) => (
-                            <div key={product.productId} className="w-full sm:w-1/2 md:w-1/3 flex items-center justify-center">
+                            <div key={product.id} className="w-full sm:w-1/2 md:w-1/3 flex items-center justify-center">
                                 <Product
                                     initialDetails={{
                                         productId: product.id,
@@ -81,7 +81,7 @@ export default function Shop() {
                     <>
                         {productData.map((product) => {
                             return (
-                                <div key={product.productId} className="w-full sm:w-1/2 md:w-1/3 flex items-center justify-center">
+                                <div key={product.id} className="w-full sm:w-1/2 md:w-1/3 flex items-center justify-center">
                                     <Product
                                         initialDetails={{
                                             productId: product.id,

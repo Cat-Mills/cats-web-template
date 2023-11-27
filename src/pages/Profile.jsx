@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Profile() {
   return (
-    <div className="w-full h-screen flex flex-col pt-[8%] bg-slate-300">Profile</div>
+    <div className="pt-[12vh] w-full h-screen flex flex-col  bg-slate-300">Profile</div>
   )
 }
