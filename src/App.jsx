@@ -13,6 +13,7 @@ import Cart from "./pages/Cart.jsx";
 import { SuccessPage } from "./pages/SuccessPage.jsx";
 import { CancelOrder } from "./pages/CancelOrder.jsx";
 import ItemPage from "./pages/ItemPage.jsx";
+import CartProvider from "./shared/CartContext.jsx";
 
 export default function App() {
   let [darkMode, setDarkMode] = useState(localStorage.theme === 'dark' ? true : false);
@@ -40,6 +41,7 @@ export default function App() {
   }, []);
   return (
     <div className="dark:text-white dark:bg-zinc-700">
+      <CartProvider>
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -54,6 +56,7 @@ export default function App() {
         <Route path="/cancel" element={<CancelOrder />} />
       </Routes>
       <Footer/>
+      </CartProvider>
     </div>
   );
 }
